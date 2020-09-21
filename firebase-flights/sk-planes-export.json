@@ -1,0 +1,87 @@
+{
+  "flights" : {
+    "-LERFpJBFcPd9ucEd570" : {
+      "additionalInformation" : "Good weather, all ok.",
+      "code" : "RFF011",
+      "crew" : [ {
+        "job" : "co_pilot",
+        "name" : "Jonas Berk"
+      }, {
+        "job" : "co_pilot",
+        "name" : "Jason Statham"
+      }, {
+        "job" : "mechanic",
+        "name" : "Jane Katles"
+      }, {
+        "job" : "senior_cabin_crew",
+        "name" : "Steven Bronski"
+      } ],
+      "departureTime" : "14-03-2018, 12:05",
+      "destination" : "Berlin",
+      "origin" : "Paris",
+      "returnTime" : "14-03-2018, 13:00",
+      "withSKPlanesDiscount" : true
+    },
+    "-LERIwa2XC-r8x0PCcms" : {
+      "additionalInformation" : "Crazy passenger on the board.",
+      "code" : "GOMAN03",
+      "crew" : [ {
+        "job" : "pilot",
+        "name" : "Bronson Mark"
+      } ],
+      "departureTime" : "20-03-2017, 13:00",
+      "destination" : "New York City",
+      "origin" : "Pekin",
+      "returnTime" : "21-03-2017, 01.00",
+      "withSKPlanesDiscount" : true
+    },
+    "-LEpfF8ZPUvJwtBYFkBA" : {
+      "additionalInformation" : "No extra info",
+      "code" : "RTL0333",
+      "crew" : [ {
+        "job" : "co_pilot",
+        "name" : "Mark Twain"
+      } ],
+      "departureTime" : "12-03-2015",
+      "destination" : "Warsaw",
+      "origin" : "Gdansk",
+      "returnTime" : "13-03-2015",
+      "withSKPlanesDiscount" : true
+    },
+    "-LEqB4-0UE47UfxNsVDH" : {
+      "additionalInformation" : "",
+      "code" : "BRS02",
+      "departureTime" : "15-04-2018, 17:15",
+      "destination" : "Tuzla",
+      "origin" : "Brussels Charleroi",
+      "returnTime" : "15-04-2018, 23:15",
+      "withSKPlanesDiscount" : true
+    },
+    "-LEqBQjPrzh4D_Ah9szw" : {
+      "additionalInformation" : "",
+      "code" : "LNOOP03",
+      "crew" : [ {
+        "job" : "senior_cabin_crew",
+        "name" : "Hamel Sank"
+      } ],
+      "departureTime" : "13-10-2018, 15:10",
+      "destination" : "Monachium",
+      "origin" : "Podgorica",
+      "returnTime" : "13-10-2018, 23:00",
+      "withSKPlanesDiscount" : true
+    },
+    "-LEqBgeu8L-lBFkz6KmF" : {
+      "additionalInformation" : "Short flight, easy.",
+      "code" : "BOLPES02",
+      "crew" : [ {
+        "job" : "mechanic",
+        "name" : "Giorgio Armani"
+      } ],
+      "departureTime" : "23-12-2018, 10:00",
+      "destination" : "Pescara",
+      "origin" : "Bologna",
+      "returnTime" : "23-12-2018, 11:00",
+      "withSKPlanesDiscount" : true
+    }
+  }
+}
