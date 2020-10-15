@@ -7,7 +7,7 @@ import {MaterialModule} from './material/material.module';
 import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from './core/core.module';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {FlightsModule} from './flights/flights.module';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
@@ -21,8 +21,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     MaterialModule,
+    FormsModule,
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
-    FlightsModule,
     BrowserAnimationsModule,
     FormsModule
   ],

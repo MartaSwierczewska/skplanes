@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Crew, Flight} from '../../models/flight.model';
+import {flighCodeValidator} from './code.validator';
 
 @Component({
   selector: 'app-flight-form',
@@ -7,6 +9,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./flight-form.component.css']
 })
 export class FlightFormComponent implements OnInit {
+  @Input() editMode = false;
   form: FormGroup;
   jobs = [
     {label: 'Stewardess', value: 'stewardess'},
@@ -23,6 +26,12 @@ export class FlightFormComponent implements OnInit {
     this.buildForm();
   }
 
+  setFlight(flight: Flight) {
+    const {key, ...formData} = flight;
+    this.form.patchValue(formData);
+    formData.crew.forEach(crewMember => this.addCrewMember(crewMember));
+  }
+
   get crew() {
     return this.form.get('crew') as FormArray;
   }
@@ -31,14 +40,14 @@ export class FlightFormComponent implements OnInit {
     this.crew.removeAt(i);
   }
 
-  addCrewMember() {
-    this.crew.push(this.buildCrewMember());
+  addCrewMember(crewMember?: Crew) {
+    this.crew.push(this.buildCrewMember(crewMember));
   }
 
-  buildCrewMember() {
+  buildCrewMember(crewMember: Crew = {} as Crew) {
     return this.formBuilder.group({
-      name: '',
-      job: ''
+      name: crewMember.name || '',
+      job: crewMember.job || ''
     });
   }
 
@@ -48,10 +57,10 @@ export class FlightFormComponent implements OnInit {
       destination: ['', {validators: [Validators.required]}],
       departureTime: ['', {validators: [Validators.required]}],
       returnTime: ['', {validators: [Validators.required]}],
-      code: ['SK', {validators: [Validators.required, Validators.minLength(4), Validators.maxLength(7)]}],
+      code: ['SK', {validators: [Validators.required, Validators.minLength(4), Validators.maxLength(7), flighCodeValidator]}],
       additionalInformation: '',
       withSKPlanesDiscount: false,
-      crew: this.formBuilder.array([this.buildCrewMember()]),
+      crew: this.formBuilder.array(this.editMode ? [] : [this.buildCrewMember()]),
     });
   }
 }

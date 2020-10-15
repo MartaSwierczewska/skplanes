@@ -1,13 +1,14 @@
-.logout-icon{
+.logout-icon {
   font-size: 35px;
+  cursor: pointer;
 }
 
-.user-login{
+.user-login {
   font-size: 15px;
   padding-right: 30px;
 }
 
-.logo{
+.logo {
   background: white;
   cursor: pointer;
   padding: 4px;

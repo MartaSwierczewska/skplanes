@@ -6,6 +6,7 @@
         <mat-error *ngIf="form.get('code').hasError('required')">Code is required</mat-error>
         <mat-error *ngIf="form.get('code').hasError('minlength')">Minimum length is 4 chars</mat-error>
         <mat-error *ngIf="form.get('code').hasError('maxlength')">Maximum length is 7 chars</mat-error>
+        <mat-error *ngIf="form.get('code').hasError('incorrectCode')">Code must start with SK prefix</mat-error>
         <mat-hint align="end">{{codeInput.value.length}}/7</mat-hint>
       </mat-form-field>
     </div>
@@ -40,7 +41,9 @@
   </div>
   <div class="row">
     <div class="col-sm-8">
-      <textarea matInput formControlName="additionalInformation" placeholder="Additional Information"></textarea>
+      <mat-form-field>
+        <textarea matInput formControlName="additionalInformation" placeholder="Additional Information"></textarea>
+      </mat-form-field>
     </div>
   </div>
   <div class="row">
